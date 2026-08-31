@@ -11,7 +11,7 @@ cities = {
 }
 
 Output_Dir = "data/raw"
-API_KEY = os.environ.get("OPENWEATHER_API_KEY")
+API_KEY = os.environ.get("...")
 
 def fetch_weather(lat, lon):
 
