@@ -14,8 +14,7 @@ Output_Dir = "data/raw"
 API_KEY = os.environ.get("...")
 
 def fetch_weather(lat, lon):
-
-  url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}"
+  url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=metric&appid={API_KEY}"
   resp = requests.get(url, timeout=10)
   resp.raise_for_status()
   return resp.json()
@@ -28,10 +27,11 @@ def save_raw(city_name, data):
     json.dump(data, f)
 
 
-for name, coords in cities.items():
-    try:
-        data = fetch_weather(coords["lat"], coords["lon"])
-        save_raw(name, data)
-    except Exception as e:
-        print(f"Failed for {name}: {e}")
+if __name__ == "__main__":
+    for name, coords in cities.items():
+        try:
+            data = fetch_weather(coords["lat"], coords["lon"])
+            save_raw(name, data)
+        except Exception as e:
+            print(f"Failed for {name}: {e}")
   
