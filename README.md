@@ -35,8 +35,7 @@ Data is collected from https://openweathermap.org/current with a unique API key.
 - Over 8 days, we would expect around 576 data points to be collected (3 cities × 24 hours × 8 days), but we only collected 138. This is likely due to GitHub Actions' free-tier scheduling, which occasionally delays or skips scheduled runs during high-traffic periods, resulting in an actual collection interval closer to every 4 hours instead of the configured hourly schedule.
 - The average temperature over the 8 days is 17.93°C.
 - The weather condition over this data collection period was mostly cloudy (84.06%), which matches the real weather conditions in Germany.
-- The highest average temperature over the 8 days of data collection was recorded in Munich. At the same time, the lowest average humidity was also recorded in Munich.
-- From this chart, I have figured out that temperature and humidity have an inverse relationship.
+- The highest average temperature over the 8 days of data collection was recorded in Munich. At the same time, the lowest average humidity was also recorded in Munich. From this chart, I have figured out that temperature and humidity have an inverse relationship.
 - After analyzing the average temperature by hour for each city, we can see that in the morning hours we have the lowest average temperature, and in the evening, at approximately 3 PM, we have the highest average temperature.
 
 ## ✍️ Author
